@@ -8,7 +8,7 @@ Here are the steps to build a Proof-of-Concept docx:
 
 1. Open Word (used up-to-date 2019 Pro, 16.0.10386.20017), create a dummy document, insert an (OLE) object (as a Bitmap Image), save it in docx.
 
-2. Edit `word/_rels/document.xml.rels` in the docx structure (it is a plain zip). Modify the XML tag "<Relationship>" with attribute
+2. Edit `word/_rels/document.xml.rels` in the docx structure (it is a plain zip). Modify the XML tag `<Relationship>` with attribute
 
 ```
 Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject"
