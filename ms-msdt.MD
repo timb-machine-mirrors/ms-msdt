@@ -44,3 +44,16 @@ NOTE: The created malicious docx is almost the same as for [CVE-2021-44444](http
 
 Note that the comment line with AAA should be repeated >60 times (for filling up enough space to trigger the payload for some reason).
 
+## BONUS (0-click RTF version)
+
+If you also add these elements under the `<o:OLEObject>` element in `word/document.xml` at step 3:
+
+```
+<o:LinkType>EnhancedMetaFile</o:LinkType>
+<o:LockedField>false</o:LockedField>
+<o:FieldCodes>\f 0</o:FieldCodes>
+```
+
+then it'll work as RTF also (open the resulting docx and save it as RTF).
+
+With RTF, there is no need to open the file in Word, it is enough to browse to the file and have a look at it in a preview pane. The preview pane triggers the external HTML payload and RCE is there without any clicks. :)
